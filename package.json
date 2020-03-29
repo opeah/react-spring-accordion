@@ -1,6 +1,6 @@
 {
   "name": "react-spring-accordion",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "build/react-spring-accordion.js",
   "module": "build/react-spring-accordion.es.js",
   "types": "build/index.d.ts",

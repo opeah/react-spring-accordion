@@ -1,11 +1,21 @@
 {
   "name": "react-spring-accordion",
-  "version": "0.0.9",
+  "version": "0.0.10",
+  "author": "<sebastien@flav.es>",
   "main": "build/react-spring-accordion.js",
   "module": "build/react-spring-accordion.es.js",
   "types": "build/index.d.ts",
   "files": [
     "build"
+  ],
+  "keywords": [
+    "react",
+    "hooks",
+    "spring",
+    "react-spring",
+    "typescript",
+    "accordion",
+    "accessible"
   ],
   "license": "MIT",
   "scripts": {
@@ -40,5 +50,6 @@
     "react": "^16.8.0",
     "react-spring": "^8.0.27",
     "react-use-measure": "^2.0.0"
-  }
+  },
+  "repository": "https://github.com/opeah/react-spring-accordion"
 }

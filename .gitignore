@@ -1,0 +1,13 @@
+# Dependencies
+/node_modules
+
+# Develop
+/.cache
+/dist
+
+# Build
+/build
+
+# Misc
+.idea
+.DS_Store

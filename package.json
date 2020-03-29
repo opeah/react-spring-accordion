@@ -1,0 +1,44 @@
+{
+  "name": "react-spring-accordion",
+  "version": "0.0.8",
+  "main": "build/react-spring-accordion.js",
+  "module": "build/react-spring-accordion.es.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf build",
+    "develop": "parcel index.html",
+    "build": "rollup -c",
+    "prepublishOnly": "yarn clean && yarn build"
+  },
+  "dependencies": {
+    "@juggle/resize-observer": "^3.1.2",
+    "react-spring": "^8.0.27",
+    "react-use-measure": "^2.0.0"
+  },
+  "devDependencies": {
+    "@juggle/resize-observer": "^3.1.2",
+    "@types/react": "^16.9.27",
+    "@types/react-dom": "^16.9.5",
+    "@types/uuid": "^7.0.2",
+    "parcel": "^1.12.4",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-spring": "^8.0.27",
+    "react-use-measure": "^2.0.0",
+    "rollup": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "typescript": "^3.8.3",
+    "uuid": "^7.0.2"
+  },
+  "peerDependencies": {
+    "@juggle/resize-observer": "^3.1.2",
+    "react": "^16.8.0",
+    "react-spring": "^8.0.27",
+    "react-use-measure": "^2.0.0"
+  }
+}

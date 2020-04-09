@@ -22,7 +22,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "outDir": "./build",
-    "declaration": true
+    "declaration": true,
+    "sourceMap": true
   },
   "include": ["src"],
   "exclude": [".cache", "dist", "node_modules"]

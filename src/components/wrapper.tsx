@@ -13,9 +13,8 @@ const { Provider } = AccordionContext;
 export interface WrapperProps {
   allowMultipleOpened?: boolean;
   children:
-    | ((AccordionContext: AccordionContextType) => React.ReactElement)
-    | React.ReactElement
-    | React.ReactElement[];
+    | React.ReactNode
+    | ((AccordionContext: AccordionContextType) => React.ReactNode);
   onChange?: (openedItems: string | string[]) => void;
 }
 

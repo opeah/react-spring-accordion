@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import useMeasure from 'react-use-measure';
 import { ResizeObserver as polyfill } from '@juggle/resize-observer';
@@ -6,7 +6,7 @@ import { ResizeObserver as polyfill } from '@juggle/resize-observer';
 import AccordionContext, { AccordionContextType } from '../context';
 
 export interface ChildProps {
-  children: React.ReactNode;
+  children: React.ReactNode | ((open: boolean) => React.ReactNode);
   className?: string;
   style?: React.StyleHTMLAttributes<HTMLDivElement>;
   uid?: string;
@@ -21,7 +21,12 @@ export interface ChildProps {
  * @constructor
  */
 
-const Child: React.FC<ChildProps> = ({ children, className, style, uid }) => {
+const Child: React.FC<ChildProps> = ({
+  children,
+  className,
+  style,
+  uid = ``,
+}) => {
   const { openedItems } = useContext<AccordionContextType>(AccordionContext);
   const [ref, { height }] = useMeasure({ polyfill });
 
@@ -30,10 +35,12 @@ const Child: React.FC<ChildProps> = ({ children, className, style, uid }) => {
     overflow: `hidden`,
   });
 
+  const open = useMemo(() => openedItems?.includes(uid), [openedItems, uid]);
+
   return (
     <a.div style={collapse}>
       <div ref={ref} className={className} style={style}>
-        {children}
+        {typeof children === `function` ? children(open) : children}
       </div>
     </a.div>
   );

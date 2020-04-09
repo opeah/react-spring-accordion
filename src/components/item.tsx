@@ -19,8 +19,13 @@ const Item: React.FC<ItemProps> = ({ children, defaultOpen = false }) => {
   return (
     <>
       {React?.Children?.map(children, (child) =>
-        // @ts-ignore
-        React.cloneElement(child, { uid })
+        React.cloneElement(
+          // @ts-ignore
+          child,
+          {
+            uid,
+          }
+        )
       )}
     </>
   );

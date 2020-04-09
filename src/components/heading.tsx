@@ -1,9 +1,9 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 
 import AccordionContext, { AccordionContextType } from '../context';
 
 export interface HeadingProps {
-  children: React.ReactNode;
+  children: React.ReactNode | ((open: boolean) => React.ReactNode);
   className?: string;
   style?: {};
   uid?: string;
@@ -22,11 +22,15 @@ const Heading: React.FC<HeadingProps> = ({
   children,
   className,
   style,
-  uid,
+  uid = ``,
 }) => {
-  const { openElement } = useContext<AccordionContextType>(AccordionContext);
+  const { openElement, openedItems } = useContext<AccordionContextType>(
+    AccordionContext
+  );
 
-  const toggleOpen = useCallback(() => uid && openElement(uid), [openElement]);
+  const toggleOpen = useCallback(() => openElement(uid), [openElement]);
+
+  const open = useMemo(() => openedItems?.includes(uid), [openedItems, uid]);
 
   return (
     <button
@@ -39,7 +43,7 @@ const Heading: React.FC<HeadingProps> = ({
         ...style,
       }}
     >
-      {children}
+      {typeof children === `function` ? children(open) : children}
     </button>
   );
 };

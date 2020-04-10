@@ -58,5 +58,3 @@ const Foo = () => (
 ## Todo
 
 - Accessibility
-- getRootProps
-- open children

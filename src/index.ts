@@ -7,8 +7,6 @@ import Child, { ChildProps } from './components/child';
 
 import useAccordionContext from './helpers/useAccordionContext';
 
-import { AccordionContextType } from './context';
-
 const Accordion: {
   Wrapper: React.NamedExoticComponent<WrapperProps>;
   Item: React.NamedExoticComponent<ItemProps>;
@@ -16,7 +14,7 @@ const Accordion: {
   Child: React.NamedExoticComponent<ChildProps>;
 } = Object.assign({}, {}, { Wrapper, Item, Heading, Child });
 
-export type { AccordionContextType };
+export type { AccordionContextType } from './context';
 
 export { useAccordionContext };
 

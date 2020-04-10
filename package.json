@@ -1,6 +1,6 @@
 {
   "name": "react-spring-accordion",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "<sebastien@flav.es>",
   "main": "build/react-spring-accordion.js",
   "module": "build/react-spring-accordion.es.js",

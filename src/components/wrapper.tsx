@@ -6,15 +6,13 @@ import React, {
   useState,
 } from 'react';
 
-import AccordionContext, { AccordionContextType } from '../context';
+import AccordionContext from '../context';
 
 const { Provider } = AccordionContext;
 
 export interface WrapperProps {
   allowMultipleOpened?: boolean;
-  children:
-    | React.ReactNode
-    | ((AccordionContext: AccordionContextType) => React.ReactNode);
+  children: React.ReactNode;
   onChange?: (openedItems: string | string[]) => void;
 }
 

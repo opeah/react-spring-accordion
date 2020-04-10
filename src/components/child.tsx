@@ -6,7 +6,7 @@ import { ResizeObserver as polyfill } from '@juggle/resize-observer';
 import AccordionContext, { AccordionContextType } from '../context';
 
 export interface ChildProps {
-  children: React.ReactNode | ((open: boolean) => React.ReactNode);
+  children: React.ReactNode;
   className?: string;
   style?: React.StyleHTMLAttributes<HTMLDivElement>;
   uid?: string;

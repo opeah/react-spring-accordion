@@ -3,9 +3,9 @@ import React, { useCallback, useContext, useMemo } from 'react';
 import AccordionContext, { AccordionContextType } from '../context';
 
 export interface HeadingProps {
-  children: React.ReactNode | ((open: boolean) => React.ReactNode);
+  children: React.ReactNode;
   className?: string;
-  style?: {};
+  style?: React.StyleHTMLAttributes<HTMLDivElement>;
   uid?: string;
 }
 

@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom';
 
 import Accordion from './src';
 
-const App = () => {
-  return (
-    <Accordion.Wrapper>
+const App = () => (
+  <Accordion.Wrapper>
+    {({ openedItems, setOpenedItems, openElement }) => (
       <Accordion.Item>
-        <Accordion.Heading>
-          {(open) => <div>{open ? `open` : `close`}</div>}
-        </Accordion.Heading>
+        <Accordion.Heading>Heading</Accordion.Heading>
         <Accordion.Child>Child</Accordion.Child>
       </Accordion.Item>
-    </Accordion.Wrapper>
-  );
-};
+    )}
+  </Accordion.Wrapper>
+);
 
 ReactDOM.render(<App />, document.getElementById(`root`));

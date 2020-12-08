@@ -39,7 +39,7 @@ const Heading: React.FC<HeadingProps> = ({
       style={style}
     >
       {typeof children === `function` ? children(open) : children}
-    </button>
+    </div>
   );
 };
 

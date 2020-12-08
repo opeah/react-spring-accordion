@@ -37,9 +37,10 @@ const Heading: React.FC<HeadingProps> = ({
       onClick={toggleOpen}
       className={className}
       style={style}
+      tabIndex={0}
     >
       {typeof children === `function` ? children(open) : children}
-    </button>
+    </div>
   );
 };
 

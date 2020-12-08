@@ -33,15 +33,10 @@ const Heading: React.FC<HeadingProps> = ({
   const open = useMemo(() => openedItems?.includes(uid), [openedItems, uid]);
 
   return (
-    <button
+    <div
       onClick={toggleOpen}
       className={className}
-      style={{
-        appearance: `none`,
-        backgroundColor: `transparent`,
-        border: 0,
-        ...style,
-      }}
+      style={style}
     >
       {typeof children === `function` ? children(open) : children}
     </button>
